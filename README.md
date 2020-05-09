@@ -14,7 +14,7 @@ train stations.
     ```
     {
         module: 'mmm-miami-transit',
-        position: 'position',
+        position: 'top-left',
         stationId: 'BKL'
     }
     ```
