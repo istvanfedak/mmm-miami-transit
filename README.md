@@ -18,6 +18,7 @@ train stations.
         stationId: 'BKL'
     }
     ```
-    -  Edit stationId to your station (default is Brickell)
+    - Edit stationId to your station (default is Brickell)
         - Go to http://www.miamidade.gov/transit/WebServices/TrainStations
           and find your stationId
+    - Save and close the file by typing: `Ctrl-o` and then `Ctrl-x`
