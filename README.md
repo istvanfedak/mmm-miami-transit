@@ -18,7 +18,7 @@ train stations.
     }
     ```
     -  Edit stationId to your station (default is Brickell)
-        - Go to `[Miami transit stations]` and find your stationId
+        - Go to [Miami transit stations] and find your stationId
 
 [Miami transit stations]: http://www.miamidade.gov/transit/WebServices/TrainStations
 [mmm-miami-transit]: https://github.com/istvanfedak/mmm-miami-transit
