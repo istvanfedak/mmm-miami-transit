@@ -1,0 +1,23 @@
+{
+  "name": "mmm-miami-transit",
+  "version": "1.0.0",
+  "description": "Magic Mirror module that displays the Miami Metrorail times for different stations",
+  "main": "mmm-miami-transit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istvanfedak/mmm-miami-transit.git"
+  },
+  "author": "Istvan Fedak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/istvanfedak/mmm-miami-transit/issues"
+  },
+  "homepage": "https://github.com/istvanfedak/mmm-miami-transit#readme",
+  "dependencies": {
+    "request": "^2.88.2",
+    "xml2json": "^0.12.0"
+  }
+}
