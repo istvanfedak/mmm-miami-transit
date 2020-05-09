@@ -6,8 +6,12 @@ train stations.
 - Clone the module from github: 
     - `git clone https://github.com/istvanfedak/mmm-miami-transit 
        ~/MagicMirror/modules/mmm-miami-transit`
-- Navigate to the mmm-miami-transit folder and install the node dependencies: 
+- Navigate to the mmm-miami-transit folder and install the module's 
+  dependencies: 
     - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
+- Rebuild node dependencies to be compatible with Electron
+    - Intall Electron Rebuild package: npm install --save-dev electron-rebuild
+    - Rebuild dependencies: $(npm bin)/electron-rebuild
 - Add your brand new module to your config!
     - Open the configuration file: `nano ~/MagicMirror/config/config.js`
     - Add the mmm-miami-transit module to the modules array:
