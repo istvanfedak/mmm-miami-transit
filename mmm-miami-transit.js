@@ -4,7 +4,7 @@ Module.register("mmm-miami-transit", {
     // default module config
     default : {
         text: "mmm-miami-transit!",
-        stationId: "BLK",
+        stationId: "BKL",
         updateInterval: 1000.
         config: {
             text: 'mm-miami-transit',
