@@ -5,7 +5,7 @@ train stations.
 ## Installation
 - Clone the module from github: 
     - `git clone https://github.com/istvanfedak/mmm-miami-transit 
-       ~/MagicMirror/modules`
+       ~/MagicMirror/modules/mmm-miami-transit`
 - Navigate to the mmm-miami-transit folder and install the node dependencies: 
     - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
 - Add your brand new module to your config!
