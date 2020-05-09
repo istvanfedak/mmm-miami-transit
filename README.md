@@ -4,10 +4,10 @@ train stations.
 
 ## Installation
 - Clone the module from github: 
-    `git clone https://github.com/istvanfedak/mmm-miami-transit 
-     ~/MagicMirror/modules`
+    - `git clone https://github.com/istvanfedak/mmm-miami-transit 
+       ~/MagicMirror/modules`
 - Navigate to the mmm-miami-transit folder and install the node dependencies: 
-    `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
+    - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
 - Add your brand new module to your config!
     - Open the configuration file: `nano ~/MagicMirror/config/config.js`
     - Add the mmm-miami-transit module to the modules array:
@@ -18,7 +18,7 @@ train stations.
         stationId: 'BKL'
     }
     ```
-    - Edit stationId to your station (default is Brickell)
+    - Edit stationId (default is Brickell)
         - Go to http://www.miamidade.gov/transit/WebServices/TrainStations
-          and find your stationId
+          and find your station's stationId
     - Save and close the file by typing: `Ctrl-o` and then `Ctrl-x`
