@@ -2,46 +2,70 @@
 // mmm-miami-transit.js
 Module.register("mmm-miami-transit", {
     defaults: {
-        foo: "I'm alaive!",
         stationId: 'BLK',
         updateInterval: 15000,
         fadeSpeed: 500,
         displayCount: 'waiting',
-        
+        tableClass: 'small',
+        opacityTime2: 0.7,
+        opacityTime3: 0.4,
     },
+
+    getStyles: function() {
+        return ['mmm-miami-transit.css'];
+    },
+
     start: function (){
         this.stationInfo = {};
+        this.loaded = false;
+
+        this.sendSocketNotification("MMM_MIAMI_TRANSIT_REQUEST",
+                this.config.stationId);
         var timer = setInterval(()=>{
-            this.sendSocketNotification(
-                "MMM_MIAMI_TRANSIT_REQUEST",
-                this.config.stationId
-            );
-        }, this.config.updateInterval)
+            this.sendSocketNotification("MMM_MIAMI_TRANSIT_REQUEST",
+                this.config.stationId);
+        }, this.config.updateInterval);
     },
+
     getDom: function() {
         var wrapper = document.createElement('div');
-        
-        // table name
-        wrapper.innerHTML = this.stationInfo.StationName + ' Station';
-        
+
+        if (!this.loaded) {
+            wrapper.innerHTML = (this.loaded) ? "Empty ..." : "Loading ...";
+			wrapper.className = this.config.tableClass + " dimmed";
+			return wrapper;
+        }
+
+        // table title
+        var tableTitle = document.createElement('h3');
+        tableTitle.className = 'tableTitle'; 
+        tableTitle.innerHTML = this.stationInfo.StationName + ' Station';
+        wrapper.appendChild(tableTitle);
+
         // create table
         var table = document.createElement('table');
-        table.className = "small";
+        table.className = this.config.tableClass;
         
         // table header row
         var headers = document.createElement('tr');
+        headers.className = 'tableHeaders';
         table.appendChild(headers);
         
         // train 1 row
         var train1 = document.createElement('tr');
+        train1.className = 'time';
         table.appendChild(train1);
         
         // train 2 row
         var train2 = document.createElement('tr');
+        train2.className = 'time';
+        train2.style.opacity = this.config.opacityTime2;
         table.appendChild(train2);
 
         // train 3 row
         var train3 = document.createElement('tr');
+        train3.className = 'time';
+        train3.style.opacity = this.config.opacityTime3;
         table.appendChild(train3);
 
         // Northbound column header
@@ -87,10 +111,13 @@ Module.register("mmm-miami-transit", {
         wrapper.appendChild(table);
         return wrapper;
     },
+
     notificationReceived: function() {},
+
     socketNotificationReceived: function(notification, payload) {
         switch(notification) {
             case "MMM_MIAMI_TRANSIT_RESPONSE":
+                this.loaded = true;
                 this.stationInfo = payload.RecordSet.Record;
                 this.updateDom(this.config.fadeSpeed);
                 Log.info(payload);
