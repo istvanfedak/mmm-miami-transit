@@ -1,33 +1,19 @@
 'use strict'
 
 const NodeHelper = require('node_helper');
-const request = require('request');
-const parser = require('xml2json');
+const getStation = require('./getStation');
 
 module.exports = NodeHelper.create({
-    start: function () {
-        console.log(this.name + ' helper started ...');
-    },
-
-    socketNotificationRecieved: function (notification, payload) {
-        if(notification === 'MMM_MIAMI_TRANSIT_REQUEST') {
-            request({
-                url: `http://www.miamidade.gov/transit/WebServices/` +
-                     `TrainTracker/?StationID=${payload.stationId}`,
-                method: 'GET'
-            },
-            function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    this.sendSocketNotification(
-                        'MMM_MIAMI_TRANSIT_RESPONSE',
-                        {
-                            data: parser.toJson(body)
-                        }
-                    );
-                }
-            
-            });
+    socketNotificationReceived: function(notification, payload) {
+        switch(notification) {
+            case "MMM_MIAMI_TRANSIT_REQUEST":
+                this.sendSocketNotification(
+                    "MMM_MIAMI_TRANSIT_RESPONSE",
+                    getStation(payload)
+                );
+                break;
+            default:
+                break;
         }
-    }
-
+    },
 });

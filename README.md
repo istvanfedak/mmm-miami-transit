@@ -10,7 +10,6 @@ train stations.
   dependencies: 
     - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
 - Rebuild node dependencies to be compatible with Electron
-    - Intall Electron Rebuild package: npm install --save-dev electron-rebuild
     - Rebuild dependencies: $(npm bin)/electron-rebuild
 - Add your brand new module to your config!
     - Open the configuration file: `nano ~/MagicMirror/config/config.js`
@@ -18,8 +17,10 @@ train stations.
     ```
     {
         module: 'mmm-miami-transit',
-        position: 'top-left',
-        stationId: 'BKL'
+        position: 'top_left',
+        config: {
+            stationId: 'BKL'
+        }
     }
     ```
     - Edit stationId (default is Brickell)
