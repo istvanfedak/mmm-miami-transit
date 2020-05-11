@@ -1,6 +1,8 @@
 # mmm-miami-transit
 Magic Mirror module that displays the Miami Metrorail times for different 
 train stations.
+[mmm-miami-transit brickell station example](./brickell-station.png)
+
 
 ## Installation
 - Clone the module from github: 
