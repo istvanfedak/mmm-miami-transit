@@ -1,6 +1,6 @@
 # mmm-miami-transit
-Magic Mirror module that displays the Miami Metrorail times for different 
-train stations.
+The MagicMirror Miami transit module (`mmm-miami-transit`) displays the Miami 
+Metrorail times for a given train station.
 
 
 ![mmm-miami-transit brickell station example](./brickell-station.png)
