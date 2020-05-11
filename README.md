@@ -23,7 +23,7 @@ Metrorail times for a given train station.
         module: 'mmm-miami-transit',
         position: 'top_left',
         config: {
-            stationId: 'BKL'
+            stationId: 'BLK'
         }
     }
     ```
