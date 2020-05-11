@@ -68,26 +68,6 @@ Module.register("mmm-miami-transit", {
         train3.style.opacity = this.config.opacityTime3;
         table.appendChild(train3);
 
-        // Northbound column header
-        var nbTrains = document.createElement('td');
-        nbTrains.innerHTML = 'Northbound';
-        headers.appendChild(nbTrains);
-
-        // Northbound trains
-        var nbTrain1 = document.createElement('td');
-        nbTrain1.innerHTML = this.stationInfo.NB_Time1;
-        train1.appendChild(nbTrain1);
-        
-        if(this.stationInfo.NB_Time1 != '*****') {
-            var nbTrain2 = document.createElement('td');
-            nbTrain2.innerHTML = this.stationInfo.NB_Time2;
-            train2.appendChild(nbTrain2);
- 
-            var nbTrain3 = document.createElement('td');
-            nbTrain3.innerHTML = this.stationInfo.NB_Time3;
-            train3.appendChild(nbTrain3); 
-        } 
-        
         // Southbound column header
         var sbTrains = document.createElement('td');
         sbTrains.innerHTML = 'Southbound';
@@ -107,6 +87,26 @@ Module.register("mmm-miami-transit", {
             sbTrain3.innerHTML = this.stationInfo.SB_Time3;
             train3.appendChild(sbTrain3);
         }
+
+        // Northbound column header
+        var nbTrains = document.createElement('td');
+        nbTrains.innerHTML = 'Northbound';
+        headers.appendChild(nbTrains); 
+
+        // Northbound trains
+        var nbTrain1 = document.createElement('td');
+        nbTrain1.innerHTML = this.stationInfo.NB_Time1;
+        train1.appendChild(nbTrain1);
+        
+        if(this.stationInfo.NB_Time1 != '*****') {
+            var nbTrain2 = document.createElement('td');
+            nbTrain2.innerHTML = this.stationInfo.NB_Time2;
+            train2.appendChild(nbTrain2);
+ 
+            var nbTrain3 = document.createElement('td');
+            nbTrain3.innerHTML = this.stationInfo.NB_Time3;
+            train3.appendChild(nbTrain3); 
+        } 
 
         wrapper.appendChild(table);
         return wrapper;
