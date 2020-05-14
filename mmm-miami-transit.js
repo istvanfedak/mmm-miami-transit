@@ -1,4 +1,3 @@
-
 // mmm-miami-transit.js
 Module.register("mmm-miami-transit", {
     defaults: {
@@ -25,7 +24,7 @@ Module.register("mmm-miami-transit", {
             this.sendSocketNotification("MMM_MIAMI_TRANSIT_REQUEST",
                 this.config.stationId);
         }, this.config.updateInterval);
-    },
+    }, 
 
     getDom: function() {
         var wrapper = document.createElement('div');
@@ -79,13 +78,17 @@ Module.register("mmm-miami-transit", {
         train1.appendChild(sbTrain1);
        
         if(this.stationInfo.SB_Time1 != '*****') {
-            var sbTrain2 = document.createElement('td');
-            sbTrain2.innerHTML = this.stationInfo.SB_Time2;
-            train2.appendChild(sbTrain2);
-       
-            var sbTrain3 = document.createElement('td');
-            sbTrain3.innerHTML = this.stationInfo.SB_Time3;
-            train3.appendChild(sbTrain3);
+            if(Object.keys(this.stationInfo.SB_Time2).length) {
+                var sbTrain2 = document.createElement('td');
+                sbTrain2.innerHTML = this.stationInfo.SB_Time2;
+                train2.appendChild(sbTrain2);
+            }
+
+            if(Object.keys(this.stationInfo.SB_Time3).length) { 
+                var sbTrain3 = document.createElement('td');
+                sbTrain3.innerHTML = this.stationInfo.SB_Time3;
+                train3.appendChild(sbTrain3);
+            }
         }
 
         // Northbound column header
@@ -99,13 +102,17 @@ Module.register("mmm-miami-transit", {
         train1.appendChild(nbTrain1);
         
         if(this.stationInfo.NB_Time1 != '*****') {
-            var nbTrain2 = document.createElement('td');
-            nbTrain2.innerHTML = this.stationInfo.NB_Time2;
-            train2.appendChild(nbTrain2);
+            if(Object.keys(this.stationInfo.NB_Time2).length) {
+                var nbTrain2 = document.createElement('td');
+                nbTrain2.innerHTML = this.stationInfo.NB_Time2;
+                train2.appendChild(nbTrain2);
+            }
  
-            var nbTrain3 = document.createElement('td');
-            nbTrain3.innerHTML = this.stationInfo.NB_Time3;
-            train3.appendChild(nbTrain3); 
+            if(Object.keys(this.stationInfo.NB_Time3).length) {
+                var nbTrain3 = document.createElement('td');
+                nbTrain3.innerHTML = this.stationInfo.NB_Time3;
+                train3.appendChild(nbTrain3);
+            }
         } 
 
         wrapper.appendChild(table);
