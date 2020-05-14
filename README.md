@@ -22,7 +22,7 @@ Metrorail times for a given train station.
         position: 'top_left',
         config: {
             stationId: 'BLK',
-            colors: true
+            colored: true
         }
     }
     ```

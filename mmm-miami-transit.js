@@ -2,7 +2,7 @@
 Module.register("mmm-miami-transit", {
     defaults: {
         stationId: 'BLK',
-        displayTrainColors: true,
+        colored: true,
         updateInterval: 15000,
         fadeSpeed: 500,
         displayCount: 'waiting',
@@ -12,7 +12,7 @@ Module.register("mmm-miami-transit", {
     },
 
     getStyles: function() {
-        if (this.config.displayTrainColors)
+        if (this.config.colored)
             return ['mmm-miami-transit.css', 'trainLineColors.css'];
         return ['mmmm-miami-transit.css'];
     },
