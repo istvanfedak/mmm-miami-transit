@@ -2,8 +2,6 @@
 The MagicMirror Miami transit module (`mmm-miami-transit`) displays the Miami 
 Metrorail times for a given train station.
 
-
-![mmm-miami-transit brickell station example](./brickell-station.png)
 ![mmm-miami-transit brickell station colored](./brickell-station-colored.png)
 
 ## Installation
@@ -24,7 +22,7 @@ Metrorail times for a given train station.
         position: 'top_left',
         config: {
             stationId: 'BLK',
-            displayTrainColors: true
+            colors: true
         }
     }
     ```
