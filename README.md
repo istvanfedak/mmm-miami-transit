@@ -12,7 +12,7 @@ Metrorail times for a given train station.
   dependencies: 
     - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
 - Rebuild node dependencies to be compatible with Electron
-    - Rebuild dependencies: `$(npm bin)/electron-rebuild`
+    - `$(npm bin)/electron-rebuild`
 - Add your brand new module to your config!
     - Open the configuration file: `nano ~/MagicMirror/config/config.js`
     - Add the mmm-miami-transit module to the modules array:
