@@ -2,9 +2,7 @@
 The MagicMirror Miami transit module (`mmm-miami-transit`) displays the Miami 
 Metrorail times for a given train station.
 
-
-![mmm-miami-transit brickell station example](./brickell-station.png)
-
+![mmm-miami-transit brickell station colored](./brickell-station-colored.png)
 
 ## Installation
 - Clone the module from github: 
@@ -14,7 +12,7 @@ Metrorail times for a given train station.
   dependencies: 
     - `cd ~/MagicMirror/modules/mmm-miami-transit && npm install`
 - Rebuild node dependencies to be compatible with Electron
-    - Rebuild dependencies: `$(npm bin)/electron-rebuild`
+    - `$(npm bin)/electron-rebuild`
 - Add your brand new module to your config!
     - Open the configuration file: `nano ~/MagicMirror/config/config.js`
     - Add the mmm-miami-transit module to the modules array:
@@ -23,7 +21,8 @@ Metrorail times for a given train station.
         module: 'mmm-miami-transit',
         position: 'top_left',
         config: {
-            stationId: 'BLK'
+            stationId: 'BLK',
+            colored: true
         }
     }
     ```

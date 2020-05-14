@@ -2,6 +2,7 @@
 Module.register("mmm-miami-transit", {
     defaults: {
         stationId: 'BLK',
+        colored: true,
         updateInterval: 15000,
         fadeSpeed: 500,
         displayCount: 'waiting',
@@ -11,7 +12,9 @@ Module.register("mmm-miami-transit", {
     },
 
     getStyles: function() {
-        return ['mmm-miami-transit.css'];
+        if (this.config.colored)
+            return ['mmm-miami-transit.css', 'trainLineColors.css'];
+        return ['mmmm-miami-transit.css'];
     },
 
     start: function (){
@@ -74,20 +77,24 @@ Module.register("mmm-miami-transit", {
         
         // Southbound trains
         var sbTrain1 = document.createElement('td');
+        sbTrain1.className = this.stationInfo.SB_Time1_LineID;
         sbTrain1.innerHTML = this.stationInfo.SB_Time1;
         train1.appendChild(sbTrain1);
-       
+        
         if(this.stationInfo.SB_Time1 != '*****') {
             if(Object.keys(this.stationInfo.SB_Time2).length) {
                 var sbTrain2 = document.createElement('td');
+                sbTrain2.className = this.stationInfo.SB_Time2_LineID;
                 sbTrain2.innerHTML = this.stationInfo.SB_Time2;
                 train2.appendChild(sbTrain2);
             }
 
             if(Object.keys(this.stationInfo.SB_Time3).length) { 
                 var sbTrain3 = document.createElement('td');
+                sbTrain3.className = this.stationInfo.SB_Time3_LineID;
                 sbTrain3.innerHTML = this.stationInfo.SB_Time3;
                 train3.appendChild(sbTrain3);
+
             }
         }
 
@@ -98,18 +105,21 @@ Module.register("mmm-miami-transit", {
 
         // Northbound trains
         var nbTrain1 = document.createElement('td');
+        nbTrain1.className = this.stationInfo.NB_Time1_LineID;
         nbTrain1.innerHTML = this.stationInfo.NB_Time1;
         train1.appendChild(nbTrain1);
-        
+
         if(this.stationInfo.NB_Time1 != '*****') {
             if(Object.keys(this.stationInfo.NB_Time2).length) {
                 var nbTrain2 = document.createElement('td');
+                nbTrain2.className = this.stationInfo.NB_Time2_LineID;
                 nbTrain2.innerHTML = this.stationInfo.NB_Time2;
                 train2.appendChild(nbTrain2);
             }
  
             if(Object.keys(this.stationInfo.NB_Time3).length) {
                 var nbTrain3 = document.createElement('td');
+                nbTrain3.className = this.stationInfo.NB_Time3_LineID;
                 nbTrain3.innerHTML = this.stationInfo.NB_Time3;
                 train3.appendChild(nbTrain3);
             }
