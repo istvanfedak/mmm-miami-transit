@@ -4,7 +4,7 @@ Metrorail times for a given train station.
 
 
 ![mmm-miami-transit brickell station example](./brickell-station.png)
-
+![mmm-miami-transit brickell station colored](./brickell-station-colored.png)
 
 ## Installation
 - Clone the module from github: 
